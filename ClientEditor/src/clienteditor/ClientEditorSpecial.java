@@ -36,8 +36,6 @@ package clienteditor;
  */
 public class ClientEditor extends javax.swing.JPanel {
     private Client client = Client.createTestClient();
-	
-    int i=0;
 
     public ClientEditor() {
         initComponents();
