@@ -178,7 +178,7 @@ public class Client {
         
         client.setSex(1);
         client.setMaritalStatus(2);
-
+	  client.setMoral(true);
         return client;
     }
 }
