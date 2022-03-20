@@ -40,7 +40,7 @@ import org.jdesktop.beansbinding.Binding.SyncFailure;
  * 
  * @author Jiri Vagner, Jan Stola
  */
-public class LoggingBindingListener extends AbstractBindingListener {
+public class UIEditor extends AbstractBindingListener {
     /** Label used to display warnings. */
     private JLabel outputLabel;
 
