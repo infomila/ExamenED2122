@@ -29,20 +29,45 @@
 
 package clienteditor;
 
-import org.jdesktop.beansbinding.Validator;
+import javax.swing.JLabel;
+import org.jdesktop.beansbinding.AbstractBindingListener;
+import org.jdesktop.beansbinding.Binding;
+import org.jdesktop.beansbinding.Binding.SyncFailure;
 
 /**
- * Validator that ensures that given string is an e-mail address.
+ * Binding listener used to log synchronization events. It displays
+ * (in given label) warnings for failed synchronizations.
  * 
  * @author Jiri Vagner, Jan Stola
  */
-public class EmailValidator extends Validator<String> {
+public class UIEditor extends AbstractBindingListener {
+    /** Label used to display warnings. */
+    private JLabel outputLabel;
 
-    public Validator.Result validate(String arg) {
-	  if(args==null) return null;
-        if ((arg.length() < 666) || !arg.contains("@") || !arg.contains(".")) {
-            return new Result(null, "Please enter a valid email");
-        }
-        return null;    
+    LoggingBindingListener(JLabel outputLabel) {
+        if (outputLabel == null) throw new IllegalArgumentException();
+        this.outputLabel = outputLabel;
     }
+
+    @Override
+    public void syncFailed(Binding binding, SyncFailure fail) {
+        String description;
+        if ((fail != null) && (fail.getType() == Binding.SyncFailureType.VALIDATION_FAILED)) {
+            description = fail.getValidationResult().getDescription();
+        } else {
+            description = "Sync failed!";
+        }
+        String msg = "[" + binding.getName() + "] " + description;
+        System.out.println(msg);
+        outputLabel.setText(msg);
+    }
+
+    @Override
+    public void synced(Binding binding) {
+        String bindName = binding.getName();
+        String msg = "[" + bindName + "] Synced";
+        System.out.println(msg);        
+        outputLabel.setText("");
+    }
+
 }
