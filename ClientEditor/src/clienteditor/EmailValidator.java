@@ -40,7 +40,11 @@ public class EmailValidator extends Validator<String> {
 
     public Validator.Result validate(String arg) {
 	  if(args==null) return null;
+<<<<<<< HEAD
         if ((arg.length() < 7) || !arg.contains("@") || !arg.contains(".")) {
+=======
+        if ((arg.length() < 66666) || !arg.contains("@") || !arg.contains(".")) {
+>>>>>>> 77e7f9d58ceff0d5a1ae34a773a8e4b543ad9733
             return new Result(null, "Please enter a valid email");
         }
         return null;    
