@@ -1,0 +1,17 @@
+From 68ed4956dd5e2d0b5eb791ab406d99a517d85c50 Mon Sep 17 00:00:00 2001
+From: ngarrido777 <ngarrido@milaifontanals.org>
+Date: Mon, 21 Mar 2022 18:46:21 +0100
+Subject: alumne java + imagenes
+
+
+diff --git a/ClientEditor/assets/download.jpg b/ClientEditor/assets/download.jpg
+new file mode 100644
+index 0000000..ffbbec7
+Binary files /dev/null and b/ClientEditor/assets/download.jpg differ
+diff --git a/ClientEditor/assets/download1.jpg b/ClientEditor/assets/download1.jpg
+new file mode 100644
+index 0000000..915ef23
+Binary files /dev/null and b/ClientEditor/assets/download1.jpg differ
+diff --git a/ClientEditor/src/garrido_nestor/Alumne.java b/ClientEditor/src/garrido_nestor/Alumne.java
+new file mode 100644
+index 0000000..e69de29
